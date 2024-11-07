@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.Scanner;
 import java.util.concurrent.TimeoutException;
 
@@ -48,7 +49,7 @@ public class Sender {
     private void askForMessage(Scanner scanner) {
         LOG.info("Enter your message: ");
 
-        String message = scanner.nextLine();
+        String message = scanner.nextLine() + " " + LocalDateTime.now();
 
         sendMessage(message);
 
